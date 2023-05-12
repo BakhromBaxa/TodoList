@@ -62,4 +62,9 @@ class TodoController extends Controller
         return redirect('/');
 
     }
+    public function search(Request $request){
+        $s = $request->s;
+        $todo = Todo::where('name', 'LIKE', "%{$s}%")->orderBy('name')->paginate(10);
+        return view('index')->with('todos', $todo);
+    }
 }

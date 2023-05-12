@@ -52,3 +52,4 @@ Route::get('delete/{todo}', [TodoController::class, 'delete']);
 
 Route::post('store-data', [TodoController::class, 'store']);
 
+Route::get('search', [TodoController::class, 'search'])->name('search');
