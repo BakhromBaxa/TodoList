@@ -55,6 +55,7 @@ class TodoController extends Controller
         $todo = new Todo();
         $todo->name = $data['name'];
         $todo->description = $data['description'];
+        $todo->created_at = $data['created_at'];
         $todo->save();
 
         session()->flash('success', 'Todo created succesfully');
